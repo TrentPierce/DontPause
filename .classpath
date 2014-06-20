@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
+	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK/google-play-services_lib"/>
+	<classpathentry kind="lib" path="/actionbarsherlock/libs/android-support-v4.jar"/>
+	<classpathentry exported="true" kind="lib" path="C:/Users/Trent/Downloads/Bastion_Android_v1.0_beta2/Bastion_Android_v1.0_beta2/bastion_1.0beta2.jar"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>

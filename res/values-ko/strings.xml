@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Dont Pause!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ad_unit_id">"ca-app-pub-5038706716632727/8458526186"</string>
+    <string name="ad_unit_id2">"ca-app-pub-5038706716632727/9892743389"</string>
+     <string name="startToast">"시작을 일시 중지하지 마십시오"</string>
+     <string name="stopToast">"중지를 일시 중지하지 마십시오"</string>
+     <string name="shareText">"내 안드로이드 음악 경험을 강화했다이 응용 프로그램을 체크 아웃"</string>
+     <string name="wstartToast">"시작하려면 아래를 클릭"</string>
+     
+</resources>

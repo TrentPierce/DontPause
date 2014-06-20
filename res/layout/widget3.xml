@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical"
+    
+    
+     >
+
+    <ImageButton
+            android:id="@+id/buttontoggle"
+           android:background="@android:color/transparent"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            
+             />
+    
+    <TextView
+        android:id="@+id/wText"
+        android:text="Don't Pause Pro!"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="10dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+           android:textColor="@color/common_signin_btn_text_dark"
+        
+        />
+    
+        
+
+  
+        
+        
+         
+   
+        
+        
+</LinearLayout>
+   

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="HardcodedText" severity="ignore" />
+    <issue id="IconColors" severity="ignore" />
+    <issue id="IconDensities" severity="ignore" />
+    <issue id="IconLocation" severity="ignore" />
+    <issue id="MissingTranslation" severity="ignore" />
+    <issue id="NewApi">
+        <ignore path="src/com/pierceholdings/dontpause/DonateActivity.java" />
+        <ignore path="src/com/pierceholdings/dontpause/SetPreferenceActivity.java" />
+        <ignore path="src/com/pierceholdings/dontpausepaid/PrefsFragmentLocked.java" />
+        <ignore path="src/com/pierceholdings/dontpausepaid/SetPreferenceActivity.java" />
+    </issue>
+    <issue id="Overdraw" severity="ignore" />
+</lint>

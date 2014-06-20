@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Dont Pause!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ad_unit_id">"ca-app-pub-5038706716632727/8458526186"</string>
+    <string name="ad_unit_id2">"ca-app-pub-5038706716632727/9892743389"</string>
+     <string name="startToast">"อย่าหยุดได้เริ่มต้น"</string>
+     <string name="stopToast">"อย่าหยุดได้หยุด"</string>
+     <string name="shareText">"ตรวจสอบ app ที่มีการปรับปรุงการฟังเพลงของฉัน Android นี้"</string>
+     <string name="wstartToast">"คลิกด้านล่างเพื่อเริ่มต้น"</string>
+     
+</resources>

@@ -1,0 +1,109 @@
+<PreferenceScreen
+        xmlns:android="http://schemas.android.com/apk/res/android"
+  
+		 >
+
+    <PreferenceCategory
+            android:title="@string/customizations"
+            >
+
+        <CheckBoxPreference
+                android:key="notif_preference"
+                android:title="@string/notification"
+                android:summaryOff="@string/disablenotif"
+                android:summaryOn="@string/notifdisabled"
+                android:defaultValue="false"
+                 />
+             <CheckBoxPreference
+                android:key="vib_preference"
+                android:title="@string/onlynotif"
+                android:summaryOff="@string/checktoenabletab"
+                android:summaryOn="@string/onlysilencingnotif"
+                android:defaultValue="false"
+                 />
+       <CheckBoxPreference
+                android:key="ringdef"
+                android:title="@string/defringer"
+                android:summaryOff="@string/setringernormal" 
+                android:summaryOn="@string/backtonormal"
+                android:defaultValue="false"
+                />
+      
+
+    </PreferenceCategory>
+  <!-- <PreferenceScreen android:title="Whitelist"
+     android:summary="Start Don't Pause when certain apps are opened"
+           android:background="@android:color/darker_gray">
+        <intent
+       android:action="android.intent.action.MAIN"
+        android:targetPackage="com.pierceholdings.dontpause"
+        android:targetClass="com.pierceholdings.dontpause.SettingsActivity"
+        />
+        </PreferenceScreen> -->
+    <PreferenceCategory
+            android:title="@string/enhancements"
+           >
+        <CheckBoxPreference
+                android:key="usbpref"
+                android:title="@string/startusb"
+                android:summaryOff="@string/willstartusb" 
+                android:summaryOn="@string/willstartusb2"
+                android:defaultValue="false"
+/>
+        <CheckBoxPreference
+                android:key="btpref"
+                android:title="@string/startbt"
+                android:summaryOff="@string/checkstartbt" 
+                android:summaryOn="@string/willstartbt"
+                android:defaultValue="false"
+/>
+       <CheckBoxPreference
+                android:key="startatboot"
+                android:title="@string/bootstart"
+                android:summaryOff="@string/checkbootstart"
+                android:summaryOn="@string/willbootstart"
+                android:defaultValue="false"
+/>
+        <CheckBoxPreference
+                android:key="headenabled"
+                android:title="@string/detheadphones"
+                android:summaryOff="@string/checkdetheadphones"
+                android:summaryOn="@string/willdetheadphones"
+                android:defaultValue="false"
+/>
+       
+
+        <CheckBoxPreference
+            android:key="ad_pref"
+            android:title="@string/advertising"
+            android:summaryOff="@string/checkadvertising"
+            android:summaryOn="@string/willadvertising"
+            android:defaultValue="false"
+           
+            />
+        
+
+    </PreferenceCategory>
+  <PreferenceCategory 
+android:title="Support">
+  <Preference
+    android:title="Email the Developer"
+    android:summary="Questions, suggestions, comments, or concerns are always welcome. He loves hearing from you.">
+
+    <intent
+  android:action="android.intent.action.VIEW"
+  android:data="mailto:Support@DontPause.me?subject=Don't Pause Feedback">
+  <extra android:name="android.intent.extra.TEXT" android:value="Hi, " />
+</intent>
+    </Preference>
+   <Preference
+    android:title="@string/feedback"
+    android:summary="@string/leavereview">
+    <intent
+      android:action="android.intent.action.VIEW"
+      android:data="https://play.google.com/store/apps/details?id=com.pierceholdings.dontpausepaid" />
+
+
+  </Preference>
+  </PreferenceCategory>
+</PreferenceScreen>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Dont Pause!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="ad_unit_id">"ca-app-pub-5038706716632727/8458526186"</string>
+    <string name="ad_unit_id2">"ca-app-pub-5038706716632727/9892743389"</string>
+     <string name="startToast">"Pause nicht begonnen hat"</string>
+     <string name="stopToast">"Pause nicht aufgehört hat"</string>
+     <string name="shareText">"Sehen Sie sich diese App, die mein Android-Musik-Erfahrung erweitert wurde"</string>
+     <string name="wstartToast">"Klicken Sie unten, um zu starten"</string>
+     
+</resources>

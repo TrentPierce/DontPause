@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.pierceholdings.dontpause"
+    android:launchMode="singleInstance"
+    android:versionCode="29"
+    android:versionName="3.44" >
+
+    <uses-sdk
+        android:minSdkVersion="7"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACTION_HEADSET_PLUG" />
+    <uses-permission android:name="android.permission.ACTION_POWER_CONNECTED" />
+    <uses-permission android:name="android.permission.ACTION_POWER_DISCONNECTED" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.INTERNET"/>  
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+     <uses-permission android:name="com.android.vending.BILLING" />  
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:theme="@style/Theme.Sherlock.Light" >
+         <meta-data android:name="com.google.android.gms.version"
+           android:value="@integer/google_play_services_version"
+            />
+        <meta-data android:name="com.bastionsdk.android.API_KEY" android:value="5399458025117876D56CB6A7899A1A" />
+        <activity
+            android:name="com.google.android.gms.ads.AdActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"/>
+        <activity
+            android:name="com.pierceholdings.dontpause.MainActivity"
+            android:label="@string/app_name"
+            android:singleUser="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.pierceholdings.dontpause.SetPreferenceActivity"
+            android:parentActivityName="com.pierceholdings.dontpause.MainActivity">
+            <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.pierceholdings.dontpause.MainActivity" /> 
+        </activity>
+        <activity
+            android:name="com.pierceholdings.dontpause.DonateActivity"
+           
+            android:theme="@android:style/Theme.Translucent">
+          
+        </activity>
+        <activity
+            android:name="com.pierceholdings.dontpause.PromoActivity"
+           
+            android:theme="@android:style/Theme.Dialog">
+          
+        </activity>
+         <activity
+            android:name="com.pierceholdings.dontpause.RestoreActivity"
+           
+            android:theme="@android:style/Theme.Translucent">
+          
+        </activity>
+        <activity
+            android:name="com.pierceholdings.dontpause.RestoreAG"
+           
+            android:theme="@android:style/Theme.Translucent">
+          
+        </activity>
+ <activity
+            android:name="com.pierceholdings.dontpause.SettingsActivity"
+            android:label="Don\'t Pause Whitelist">
+            </activity> 
+        <service
+            android:name="com.pierceholdings.dontpause.MyService"
+            android:enabled="true"
+            android:singleUser="true" />
+        <service
+            android:name="com.pierceholdings.dontpause.MyService2"
+            android:enabled="true"
+            android:singleUser="true" />
+        <service
+            android:name="com.pierceholdings.dontpause.HeadsetObserverService"
+            android:enabled="true"
+            android:singleUser="true" />
+
+        <receiver android:name="com.pierceholdings.dontpause.MyWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/dontpause_widget_provider" />
+        </receiver>
+        <receiver android:name="com.pierceholdings.dontpause.MyWidgetProvider2" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/dontpause_widget_provider2" />
+        </receiver>
+        <receiver android:name="com.pierceholdings.dontpause.MyWidgetProvider3" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/dontpause_widget_provider3" />
+        </receiver>
+        <receiver android:name="com.pierceholdings.dontpause.Booter" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.pierceholdings.dontpause.USBReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.pierceholdings.dontpause.BTReceiver"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.bluetooth.device.action.ACL_CONNECTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED" />
+                <action android:name="android.bluetooth.device.action.ACL_DISCONNECT_REQUESTED" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>
