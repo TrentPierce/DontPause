@@ -15,19 +15,28 @@ import com.pierceholdings.dontpauseiap.utils.IabHelper;
 import com.pierceholdings.dontpauseiap.utils.IabResult;
 import com.pierceholdings.dontpauseiap.utils.Inventory;
 import com.pierceholdings.dontpauseiap.utils.Purchase;
-/**
- * Implements Google Play in-app billing v3 for the donate feature. Plenty of interesting stuff here.
- * Scroll down for details
- */
-/**
- * Implements Google Play in-app billing v3 for the donate feature. Plenty of interesting stuff here.
- * Scroll down for details
- */
 
+/**
+ * Developed by Trent Pierce for Pierce Holdings LLC
+ *
+ *Copyright 2014 Pierce Holdings LLC
+ *
+ *Licensed under the Apache License, Version 2.0 (the "License");
+ *you may not use this file except in compliance with the License.
+ *You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *Unless required by applicable law or agreed to in writing, software
+ *distributed under the License is distributed on an "AS IS" BASIS,
+ *WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *See the License for the specific language governing permissions and
+ *limitations under the License.
+ */
 
 public class RestoreActivity extends Activity {
 
-	
+	//This class restores a purchase just in case the user deleted the app and reinstalled it.
 	
 	static final String SKU_SMALL = "unlock";
 	String TAG = "Dont Pause";
@@ -50,21 +59,14 @@ public class RestoreActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-//		this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		super.onCreate(savedInstanceState);
-		// setContentView(R.layout.donate);
 	
-		
 		// In-app purchase stuff
-		//Remember to copy your application's specific license key from google play here
-		//for security purposes, save it to an xml if it needs to be on github
 		String base64EncodedPublicKey = getString(R.string.app_license);
 		Log.d(TAG, "Creating IAB helper.");
 		mHelper = new IabHelper(this, base64EncodedPublicKey);
 
-		// enable debug logging (for a production application, you should set
-		// this to false).
+		// enable/disable debug logging
 		mHelper.enableDebugLogging(false);
 
 		// Start setup. This is asynchronous and the specified listener
@@ -76,7 +78,7 @@ public class RestoreActivity extends Activity {
 				Log.d(TAG, "Setup finished.");
 
 				if (!result.isSuccess()) {
-					// Oh noes, there was a problem.
+					//Show error if detected.
 					toast(getString(R.string.in_app_bill_error) + result);
 					return;
 				}
@@ -108,35 +110,27 @@ public class RestoreActivity extends Activity {
 
 	            Log.d(TAG, "Query inventory was successful.");
 
-	            /*
-	             * Check for items we own. Notice that for each purchase, we check
-	             * the developer payload to see if it's correct! See
-	             * verifyDeveloperPayload().
-	             */
-
-	            // Do we have the premium upgrade?
+	            // Do we own the pro upgrade?
 	            Purchase premiumPurchase = inventory.getPurchase(SKU_SMALL);
 	            unlocked = (premiumPurchase != null && verifyDeveloperPayload(premiumPurchase));
 	            Log.d(TAG, "User is " + (unlocked ? "PREMIUM" : "NOT PREMIUM"));
 	            if(unlocked = (premiumPurchase != null && verifyDeveloperPayload(premiumPurchase))) {
-	          
+	            //Yes we do. Save boolean and restart app.
 	            savePreferences(TAG, unlocked);
-	           
 	            Log.d(TAG, "Initial inventory query finished; enabling Pro UI.");
 	            } else {
+	            	//No we dont. Show toast telling the user to purchase pro.
 	            	toast("Upgrade was not previously purchased, scroll up to purchase.");
-	            finish();
+	                finish();
 	            }
 	        }
-
 	    };
 	
-
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
 
-		// very important:
+		// very important: Destroy helper
 		Log.d(TAG, "Destroying helper.");
 		if (mHelper != null) {
 			mHelper.dispose();
@@ -163,29 +157,23 @@ public class RestoreActivity extends Activity {
 		}
 	}
 	 private void savePreferences(String key, boolean value) {
-		 
+		         //Save booleans
 		         SharedPreferences sharedPreferences = PreferenceManager
 		                 .getDefaultSharedPreferences(this);
 		         Editor editor = sharedPreferences.edit();
 		         editor.putBoolean("unlocked", true);
 		         editor.putBoolean("ad_pref", true);
 		         editor.commit();
+		         //Restart app
 		         Intent i = getBaseContext().getPackageManager()
 		                 .getLaunchIntentForPackage( getBaseContext().getPackageName() );
 		    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		    startActivity(i);
-		         
 		     }
 	 
-
 	/** Verifies the developer payload of a purchase. */
 	boolean verifyDeveloperPayload(Purchase p) {
 		String payload = p.getDeveloperPayload();
-
-		/**Follow google guidelines to create your own payload string here, in case it is needed.
-		*Remember it is recommended to store the keys on your own server for added protection
-		USE as necessary*/
-
 		return true;
 	}
 
@@ -202,13 +190,11 @@ public class RestoreActivity extends Activity {
 
 			if (result.isFailure()) {
 				toast(getString(R.string.purchase_error) + result);
-				// setWaitScreen(false);
 				finish();
 				return;
 			}
 			if (!verifyDeveloperPayload(purchase)) {
 				toast(getString(R.string.error_verification));
-				// setWaitScreen(false);
 				finish();
 				return;
 			}
@@ -217,17 +203,13 @@ public class RestoreActivity extends Activity {
 
 			if (purchase.getSku().equals(SKU_SMALL))
 					 {
-
 				 Log.d(TAG, "Unlock IAP");
 				 toast(getString(R.string.thank_you));
 				 savePreferences(TAG, unlocked);
-			//	mHelper.consumeAsync(purchase, mConsumeFinishedListener);
 			}
-
 		}
 	};
-
-
+	
 	private void toast(final String msg) {
 		runOnUiThread(new Runnable() {
 			@Override
@@ -238,8 +220,7 @@ public class RestoreActivity extends Activity {
 				}
 				toast.setText(msg);
 				toast.show();
-			}
+			 }
 		});
 	}
-
 }

@@ -2,22 +2,46 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pierceholdings.dontpause"
     android:launchMode="singleInstance"
-    android:versionCode="29"
-    android:versionName="3.44" >
+    android:versionCode="30"
+    android:versionName="3.45" >
 
+    <!-- /**
+ * Developed by Trent Pierce for Pierce Holdings LLC
+ *
+ *Copyright 2014 Pierce Holdings LLC
+ *
+ *Licensed under the Apache License, Version 2.0 (the "License");
+ *you may not use this file except in compliance with the License.
+ *You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *Unless required by applicable law or agreed to in writing, software
+ *distributed under the License is distributed on an "AS IS" BASIS,
+ *WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *See the License for the specific language governing permissions and
+ *limitations under the License.
+ */
+     -->
+    
     <uses-sdk
         android:minSdkVersion="7"
         android:targetSdkVersion="19" />
-
+   
+    <!-- Booter.java uses this to start on boot -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Headset Listener uses this to detect headset events -->
     <uses-permission android:name="android.permission.ACTION_HEADSET_PLUG" />
+    <!-- USB listener needs these for USB events -->
     <uses-permission android:name="android.permission.ACTION_POWER_CONNECTED" />
     <uses-permission android:name="android.permission.ACTION_POWER_DISCONNECTED" />
+    <!-- Bluetooth receiver uses these to detect events -->
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <!-- These are needed by multiple activities for ads, in app purchases, restores, free unlocks, etc. -->
     <uses-permission android:name="android.permission.INTERNET"/>  
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-     <uses-permission android:name="com.android.vending.BILLING" />  
+    <uses-permission android:name="com.android.vending.BILLING" />  
 
     <application
         android:allowBackup="true"

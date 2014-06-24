@@ -447,14 +447,11 @@ int layout cust_toast_layout 0x7f030017
 int layout cust_toast_layout2 0x7f030018
 int layout cust_toast_layout3 0x7f030019
 int layout donate 0x7f03001a
-int layout fragment_whitelist 0x7f030022
-int layout fragment_whitelist_grid 0x7f03001b
-int layout fragment_whitelist_list 0x7f03001c
-int layout sherlock_spinner_dropdown_item 0x7f03001d
-int layout sherlock_spinner_item 0x7f03001e
-int layout widget 0x7f03001f
-int layout widget2 0x7f030020
-int layout widget3 0x7f030021
+int layout sherlock_spinner_dropdown_item 0x7f03001b
+int layout sherlock_spinner_item 0x7f03001c
+int layout widget 0x7f03001d
+int layout widget2 0x7f03001e
+int layout widget3 0x7f03001f
 int menu main_activity_actions 0x7f0c0000
 int menu mainmenu 0x7f0c0001
 int string abs__action_bar_home_description 0x7f0a0000
@@ -822,4 +819,3 @@ int xml dontpause_widget_provider2 0x7f040002
 int xml dontpause_widget_provider3 0x7f040003
 int xml preferences 0x7f040004
 int xml preferenceslocked 0x7f040005
-int xml preferenceswhitelist 0x7f040006

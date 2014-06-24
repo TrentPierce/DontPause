@@ -17,25 +17,32 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.pierceholdings.dontpauseiap.utils.IabHelper;
-/**
- * Implements Google Play in-app billing v3 for the donate feature. Plenty of interesting stuff here.
- * Scroll down for details
- */
-/**
- * Implements Google Play in-app billing v3 for the donate feature. Plenty of interesting stuff here.
- * Scroll down for details
- */
 
+/**
+ * Developed by Trent Pierce for Pierce Holdings LLC
+ *
+ *Copyright 2014 Pierce Holdings LLC
+ *
+ *Licensed under the Apache License, Version 2.0 (the "License");
+ *you may not use this file except in compliance with the License.
+ *You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *Unless required by applicable law or agreed to in writing, software
+ *distributed under the License is distributed on an "AS IS" BASIS,
+ *WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *See the License for the specific language governing permissions and
+ *limitations under the License.
+ */
 
 public class PromoActivity extends Activity {
 
-	
+	//This activity is for a previous promo code unlock I offered. It is currently unused, but I left it in the app so I can easily reactivate it in the future.
 	
 	static final String SKU_SMALL = "unlock";
 	String TAG = "Dont Pause";
-	
 	boolean unlocked = false;
-	
 	String answer;
 	
 
@@ -49,10 +56,12 @@ public class PromoActivity extends Activity {
 
 	// Button setups
 	Button button_small;
-	private String AppOfTheDay = "Xda";
-	private String appoftheday = "XDA";
-	private String Appoftheday = "TPD";
-	private String APPOFTHEDAY = "DONTPAUSE";
+	
+	//Unlock Codes
+	private String answer1 = "Xda";
+	private String answer2 = "XDA";
+	private String answer3 = "TPD";
+	private String answer4 = "DONTPAUSE";
 	
 	
 	@SuppressWarnings("deprecation")
@@ -70,7 +79,7 @@ public class PromoActivity extends Activity {
 	}
 	@Override
 	protected Dialog onCreateDialog(int id) {
-	    // We have only one dialog.
+	    // Create promo code dialog box
 		AlertDialog.Builder alert = new AlertDialog.Builder(this); 
     	LinearLayout layout = new LinearLayout(this);
     	TextView tvMessage = new TextView(this); 
@@ -83,7 +92,7 @@ public class PromoActivity extends Activity {
     	layout.addView(FNBox);
     	alert.setTitle("Promo"); alert.setView(layout);
     				
-    		
+    		          //Exit button to close box
     		          alert.setNegativeButton("Exit",new DialogInterface.OnClickListener() {
     					public void onClick(DialogInterface dialog,int id) {
     						dialog.dismiss();
@@ -91,59 +100,64 @@ public class PromoActivity extends Activity {
     						
     					}
     				  });
+    		          //Positive button submits answer and checks for activation.
     				  alert.setPositiveButton("Submit",new DialogInterface.OnClickListener() {
     					public void onClick(DialogInterface dialog,int id) {
+    						//Get text from editText box, and trim any excess space off the end.
     						answer = FNBox.getText().toString().trim();
     			          
-    						if (answer.equals(AppOfTheDay)) {
+    						//Check if the entered text is equal to answer 1
+    						if (answer.equals(answer1)) {
+    							//Save boolean and restart app
     							savePreferences(TAG, unlocked);
     							//display in long period of time
     							Toast.makeText(getApplicationContext(), "Valid Promo Code. Don't Pause Pro Unlocked...", Toast.LENGTH_LONG).show();
     						}
-    						else if (answer.equals(Appoftheday)) {
+    						//Check if the entered text is equal to answer 2
+    						else if (answer.equals(answer2)) {
+    							//Save boolean and restart app
     							savePreferences(TAG, unlocked);
     							//display in long period of time
     							Toast.makeText(getApplicationContext(), "Valid Promo Code. Don't Pause Pro Unlocked...", Toast.LENGTH_LONG).show();
     						}
-    						else if (answer.equals(APPOFTHEDAY)) {
+    						//Check if the entered text is equal to answer 3
+    						else if (answer.equals(answer3)) {
+    							//Save boolean and restart app
     							savePreferences(TAG, unlocked);
     							//display in long period of time
     							Toast.makeText(getApplicationContext(), "Valid Promo Code. Don't Pause Pro Unlocked...", Toast.LENGTH_LONG).show();
     						}
-    						else if (answer.equals(appoftheday)) {
+    						//Check if the entered text is equal to answer 4
+    						else if (answer.equals(answer4)) {
+    							//Save boolean and restart app
     							savePreferences(TAG, unlocked);
     							//display in long period of time
     							Toast.makeText(getApplicationContext(), "Valid Promo Code. Don't Pause Pro Unlocked...", Toast.LENGTH_LONG).show();
     						}
     						else {
-    							//display in long period of time
-    							Toast.makeText(getApplicationContext(), "Invalid Promo Code.", Toast.LENGTH_LONG).show();
+    							//The user entered an invalid code. Show a toast to tell them.
+    							Toast.makeText(getApplicationContext(), "Invalid Promo Code. Unlock failed.", Toast.LENGTH_LONG).show();
     							dialog.dismiss();
         						finish();
     						}
     			            dialog.dismiss();
     			            finish();    			        
-    			           
     					}
     				  });
-    			
-    			
-    				// create alert dialog
-    			
-     
     				return alert.show();
-			
-    }
-  
+	}
 
+	
+	//Save and restart the app
 	 private void savePreferences(String key, boolean value) {
-		 
+		 //Save booleans to sharedPreferences
          SharedPreferences sharedPreferences = PreferenceManager
                  .getDefaultSharedPreferences(this);
          Editor editor = sharedPreferences.edit();
          editor.putBoolean("unlocked", true);
          editor.putBoolean("ad_pref", true);
          editor.commit();
+         //Restart app
          Intent i = getBaseContext().getPackageManager()
                  .getLaunchIntentForPackage( getBaseContext().getPackageName() );
     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
@@ -153,13 +167,5 @@ public class PromoActivity extends Activity {
 	@Override
 	public void onDestroy() {
 		super.onDestroy();
-
-		// very important:
-		
-		
 	}
 }
-
-	
-	
-
