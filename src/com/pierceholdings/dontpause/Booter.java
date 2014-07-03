@@ -42,26 +42,21 @@ public class Booter extends BroadcastReceiver {
 		      boolean headenabled = prefs.getBoolean("headenabled", false);
 		      
 		     
-		     Intent serviceIntent = new Intent(context, HeadsetObserverService.class);           
-	            context.startService(serviceIntent);
+		//     Intent serviceIntent = new Intent(context, HeadsetObserverService.class);           
+	    //        context.startService(serviceIntent);
 	            
-	          //Start Don't Pause service
-		      if (startatboot) {
-		    	  
-		    	  //Decide whether to start Tablet mode or standard mode
-		    	  if (vibenabled) {
+	          //Decide which service to start, and start Don't Pause service
+		      if (startatboot && vibenabled) {
 		    	  context.startService(new Intent(context, MyService2.class));
 		    	  } else {
 		   		  context.startService(new Intent(context, MyService.class));
-		    	  }
-		    	  
-		    	  //Check Headset settings. If start on headset == enabled; Start headset observer.
-		    	  if (headenabled) {
-			    	  context.startService(new Intent(context, HeadsetObserverService.class));
-		        } else {	
-    	  }  
-	   }
-	 }
-   }
-}
-	
+		       } 	
+		      
+		      //If the headset detection is enabled, then lets make sure we always start it at every boot.
+		      if (headenabled) {
+		    	  context.startService(new Intent(context, HeadsetObserverService.class));
+		      }
+		      }
+		     }
+	       }  
+	     

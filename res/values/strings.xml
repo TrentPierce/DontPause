@@ -62,6 +62,8 @@
 	<string name="error_consume">Error while consuming: </string>
 	<string name="app_license">"MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsy3vjCpmsJwN37FR2lM5QxWWIrMgcvEUcUzCQOJq2W6jtsRC5njDX68kVDltm0EKeKzVw9HhhsNnfDccBvtz20o2fDOQq/uR7+0JOF0/pVTG3twG5AGZpKn++/ZE6/8JOVmcU2qkoUvL65QnezDmoe2Fr8k4YfRUQACqxg7IJtVoNKnesbo68jTvjL9F0mkJUj4+NNxBFb4lY3kQPqMi3XSe/j/p/IJ5uru/wbckdlGokqmv3bU46+9n/26MC5h4mqo+VueTBVM2qzhzSVy+5d/p5frByA7Ka8I180W1bWmGX8FXVK7J9veTYNMCW/Oz1GRP2Ji0rxrf96bJaaBE/QIDAQAB"</string>
     
-    
+     <string name="settings_activityTitle">Dont Pause Settings</string>
+    <string name="settings_enableTitle">Enable</string>
+    <string name="settings_header">Select app(s) that should trigger Dont Pause</string>
 
 </resources>

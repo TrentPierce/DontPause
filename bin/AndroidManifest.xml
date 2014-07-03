@@ -30,6 +30,8 @@
    
     <!-- Booter.java uses this to start on boot -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- Gets Tasks for Whitelist -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
     <!-- Headset Listener uses this to detect headset events -->
     <uses-permission android:name="android.permission.ACTION_HEADSET_PLUG" />
     <!-- USB listener needs these for USB events -->
@@ -111,6 +113,10 @@
             android:singleUser="true" />
         <service
             android:name="com.pierceholdings.dontpause.HeadsetObserverService"
+            android:enabled="true"
+            android:singleUser="true" />
+        <service
+            android:name="com.pierceholdings.dontpause.CheckRunningActivity"
             android:enabled="true"
             android:singleUser="true" />
 

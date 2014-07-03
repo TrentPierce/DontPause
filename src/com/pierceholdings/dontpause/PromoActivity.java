@@ -58,10 +58,10 @@ public class PromoActivity extends Activity {
 	Button button_small;
 	
 	//Unlock Codes
-	private String answer1 = "Xda";
-	private String answer2 = "XDA";
-	private String answer3 = "TPD";
-	private String answer4 = "DONTPAUSE";
+	private String answer1 = "fctest";
+	private String answer2 = "FCTEST";
+	private String answer3 = "FCtest";
+	private String answer4 = "FCTest";
 	
 	
 	@SuppressWarnings("deprecation")

@@ -122,6 +122,8 @@ public class MainActivity extends SherlockActivity  implements OnClickListener, 
 	    buttonStart.setOnClickListener(this);
 	    buttonStop.setOnClickListener(this);
 	    
+	  //  startService(new Intent(this, CheckRunningActivity.class));
+	    
 	    //Get those booleans
         boolean vibenabled = mySharedPreferences1.getBoolean("vib_preference", false);
         boolean headenabled = mySharedPreferences1.getBoolean("headenabled", false);

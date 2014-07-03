@@ -532,6 +532,9 @@ int string purchase_error 0x7f0a005b
 int string quit_button 0x7f0a0059
 int string retry_button 0x7f0a0058
 int string setringernormal 0x7f0a003b
+int string settings_activityTitle 0x7f0a0060
+int string settings_enableTitle 0x7f0a0061
+int string settings_header 0x7f0a0062
 int string shareText 0x7f0a002f
 int string startToast 0x7f0a002d
 int string startbt 0x7f0a0041
@@ -818,4 +821,5 @@ int xml dontpause_widget_provider 0x7f040001
 int xml dontpause_widget_provider2 0x7f040002
 int xml dontpause_widget_provider3 0x7f040003
 int xml preferences 0x7f040004
-int xml preferenceslocked 0x7f040005
+int xml preferences2 0x7f040005
+int xml preferenceslocked 0x7f040006

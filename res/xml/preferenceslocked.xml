@@ -98,7 +98,7 @@
     </PreferenceCategory>
   <PreferenceCategory 
   android:title="Support">
-    <!--      <PreferenceScreen android:title="Tap here to enter a promo code"
+       <!--   <PreferenceScreen android:title="Tap here to enter a promo code"
            android:key="unlocked"
            android:defaultValue="false"
            android:background="@android:color/darker_gray">
@@ -118,7 +118,7 @@
         android:targetClass="com.pierceholdings.dontpause.RestoreActivity"
         />
   </PreferenceScreen>
-       <!--    <PreferenceScreen android:title="Restore Promo Unlock"
+           <PreferenceScreen android:title="Restore AppGratis Unlock"
            android:key="unlocked"
            android:defaultValue="false"
            android:background="@android:color/darker_gray">
@@ -127,7 +127,7 @@
         android:targetPackage="com.pierceholdings.dontpause"
         android:targetClass="com.pierceholdings.dontpause.RestoreAG"
         />    
-</PreferenceScreen> -->   
+</PreferenceScreen>   
   <Preference
     android:title="Email the Developer"
     android:summary="Questions, suggestions, comments, or concerns are always welcome. He loves hearing from you.">

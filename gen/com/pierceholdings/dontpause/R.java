@@ -1463,6 +1463,9 @@ http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
         public static final int quit_button=0x7f0a0059;
         public static final int retry_button=0x7f0a0058;
         public static final int setringernormal=0x7f0a003b;
+        public static final int settings_activityTitle=0x7f0a0060;
+        public static final int settings_enableTitle=0x7f0a0061;
+        public static final int settings_header=0x7f0a0062;
         public static final int shareText=0x7f0a002f;
         public static final int startToast=0x7f0a002d;
         public static final int startbt=0x7f0a0041;
@@ -1721,7 +1724,8 @@ http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
         public static final int dontpause_widget_provider2=0x7f040002;
         public static final int dontpause_widget_provider3=0x7f040003;
         public static final int preferences=0x7f040004;
-        public static final int preferenceslocked=0x7f040005;
+        public static final int preferences2=0x7f040005;
+        public static final int preferenceslocked=0x7f040006;
     }
     public static final class styleable {
         /** Attributes that can be used with a AdsAttrs.
