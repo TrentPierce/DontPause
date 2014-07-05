@@ -48,7 +48,7 @@ public class Booter extends BroadcastReceiver {
 	          //Decide which service to start, and start Don't Pause service
 		      if (startatboot && vibenabled) {
 		    	  context.startService(new Intent(context, MyService2.class));
-		    	  } else {
+		    	  } else if (startatboot) {
 		   		  context.startService(new Intent(context, MyService.class));
 		       } 	
 		      

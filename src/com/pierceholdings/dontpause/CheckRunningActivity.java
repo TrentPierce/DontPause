@@ -1,8 +1,6 @@
 package com.pierceholdings.dontpause;
 
 
-import java.util.List;
-import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -11,7 +9,6 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.ResolveInfo;
 import android.os.Handler;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
@@ -27,7 +24,6 @@ public class CheckRunningActivity extends Service {
     private Context context;
   //  public String selectedPkg;
     private SharedPreferences prefs;
-    public String selectedPkg;
     
     public static final long NOTIFY_INTERVAL = 1000; // 1 second
    
@@ -40,16 +36,14 @@ public class CheckRunningActivity extends Service {
     		// TODO Auto-generated method stub
     		return null;
     	}
-    	private void loadPrefs() {
-    		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        }
+    	
     	private boolean isEnabled(String pkgName) {
     		//prefs.reload();
             return prefs.getBoolean(pkgName, false);
         }
     @Override
     public void onCreate() { 
-    	loadPrefs();
+    	
     	 //Get preferences and check if persistent status bar notification is enabled
    // 	ActivityManager am = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
     	 // cancel if already existed
@@ -81,7 +75,8 @@ public class CheckRunningActivity extends Service {
                 	Log.d(TAG, "Its running");   
             
             String lastPkg = am.getRunningTasks(1).get(0).topActivity.getPackageName();
-           if (selectedPkg.equals(lastPkg)) {
+            
+           if (isEnabled(lastPkg)) {
             	if (vibenabled) {
             	startService(new Intent(CheckRunningActivity.this, MyService.class));
  	  		    	  } else {
