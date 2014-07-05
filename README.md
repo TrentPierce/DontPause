@@ -14,6 +14,8 @@ View the development thread over at XDA.
 
 http://forum.xda-developers.com/showthread.php?t=2653171
 
+If you do use my code, all I ask is that you give me credit somewhere.
+
 
 Copyright 2014 Trent Pierce - Pierce Holdings LLC
 
