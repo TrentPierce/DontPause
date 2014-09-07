@@ -2,10 +2,17 @@ package com.pierceholdings.dontpause;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.Window;
+
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v4.app.NavUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 /**
  * Developed by Trent Pierce for Pierce Holdings LLC
@@ -31,11 +38,14 @@ public class SetPreferenceActivity extends SherlockActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
+		// requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+		
 		
 		//Setup actionBar
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 	    getSupportActionBar().setDisplayShowTitleEnabled(true);
 	    getSupportActionBar().setTitle("Settings");
+	    getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
 	    
 	    //Check my prefs
 	    SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -51,6 +61,7 @@ public class SetPreferenceActivity extends SherlockActivity {
                      new PrefsFragmentLocked()).commit();
         }
 	}
+	
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    switch (item.getItemId()) {

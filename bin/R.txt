@@ -557,6 +557,8 @@ int style AppBaseTheme 0x7f0b0059
 int style AppTheme 0x7f0b005a
 int style ButtonAppTheme 0x7f0b005b
 int style ImageButtonAppTheme 0x7f0b005c
+int style MyTheme 0x7f0b005d
+int style PreferencesTheme 0x7f0b005e
 int style Sherlock___TextAppearance_Small 0x7f0b0046
 int style Sherlock___Theme 0x7f0b0051
 int style Sherlock___Theme_DarkActionBar 0x7f0b0053
@@ -737,7 +739,7 @@ int styleable SherlockSearchView_android_inputType 1
 int styleable SherlockSearchView_android_maxWidth 0
 int styleable SherlockSearchView_iconifiedByDefault 3
 int styleable SherlockSearchView_queryHint 4
-int[] styleable SherlockSpinner { 0x010100af, 0x01010175, 0x01010176, 0x0101017b, 0x01010262, 0x010102ac, 0x010102ad, 0x0101043a }
+int[] styleable SherlockSpinner { 0x010100af, 0x01010175, 0x01010176, 0x0101017b, 0x01010262, 0x010102ac, 0x010102ad, 0x0101043d }
 int styleable SherlockSpinner_android_dropDownHorizontalOffset 5
 int styleable SherlockSpinner_android_dropDownSelector 1
 int styleable SherlockSpinner_android_dropDownVerticalOffset 6

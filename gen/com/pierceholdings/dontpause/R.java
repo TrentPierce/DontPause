@@ -1628,6 +1628,8 @@ http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
         public static final int AppTheme=0x7f0b005a;
         public static final int ButtonAppTheme=0x7f0b005b;
         public static final int ImageButtonAppTheme=0x7f0b005c;
+        public static final int MyTheme=0x7f0b005d;
+        public static final int PreferencesTheme=0x7f0b005e;
         public static final int Sherlock___TextAppearance_Small=0x7f0b0046;
         public static final int Sherlock___Theme=0x7f0b0051;
         public static final int Sherlock___Theme_DarkActionBar=0x7f0b0053;
@@ -3095,7 +3097,7 @@ containing a value of this type.
          */
         public static final int[] SherlockSpinner = {
             0x010100af, 0x01010175, 0x01010176, 0x0101017b,
-            0x01010262, 0x010102ac, 0x010102ad, 0x0101043a
+            0x01010262, 0x010102ac, 0x010102ad, 0x0101043d
         };
         /**
           <p>

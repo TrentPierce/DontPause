@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -27,6 +29,7 @@ import android.widget.Toast;
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuItem;
+import com.actionbarsherlock.view.Window;
 import com.bastionsdk.android.Bastion;
 import com.bastionsdk.android.BastionOfferListener;
 import com.bastionsdk.android.Feature;
@@ -69,6 +72,7 @@ public class MainActivity extends SherlockActivity  implements OnClickListener, 
 	  @Override
 	  public void onCreate(Bundle savedInstanceState) {
 	    super.onCreate(savedInstanceState);
+	//    requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
 	    
 	    //OnCreate check my shared preferences
 	    SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -104,7 +108,9 @@ public class MainActivity extends SherlockActivity  implements OnClickListener, 
   	    interstitial.loadAd(adRequest);
 
   	    //Setup the actionbar sherlock action bar
-	    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+	 //   getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+  	    
+  	    getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ffffff")));
 		getSupportActionBar().setDisplayShowTitleEnabled(false);
 	    
 		String deviceId = Secure.getString(getContentResolver(), Secure.ANDROID_ID);
@@ -122,7 +128,7 @@ public class MainActivity extends SherlockActivity  implements OnClickListener, 
 	    buttonStart.setOnClickListener(this);
 	    buttonStop.setOnClickListener(this);
 	    
-	  //  startService(new Intent(this, CheckRunningActivity.class));
+	//    startService(new Intent(this, CheckRunningActivity.class));
 	    
 	    //Get those booleans
         boolean vibenabled = mySharedPreferences1.getBoolean("vib_preference", false);
@@ -409,7 +415,7 @@ public static class AppRater {
   }
 }
 
-//Bastion offer redeemer for AppGratis.
+//Bastion offer redeemer for AppGratis and Stelapps.
 @Override
 public void onRedeemOffer(Offer offer) {
 	// TODO Auto-generated method stub
@@ -422,7 +428,7 @@ public void onRedeemOffer(Offer offer) {
 	savePreferences(TAG, unlocked);
     
 	//display for a long period of time
-	Toast.makeText(getApplicationContext(), "Don't Pause Pro Unlocked by AppGratis...", Toast.LENGTH_LONG).show();
+	Toast.makeText(getApplicationContext(), "Don't Pause Pro Unlocked by Stelapps...", Toast.LENGTH_LONG).show();
     }
 }
 
@@ -434,7 +440,7 @@ private void savePreferences(String key, boolean value) {
             .getDefaultSharedPreferences(this);
     Editor editor = sharedPreferences.edit();
     editor.putBoolean("unlocked", true);
-    editor.putBoolean("ad_pref", true);
+ //   editor.putBoolean("ad_pref", true);
     //Commit changes
     editor.commit();
     //Restart app

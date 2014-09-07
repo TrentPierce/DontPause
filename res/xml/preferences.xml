@@ -1,6 +1,6 @@
 <PreferenceScreen
         xmlns:android="http://schemas.android.com/apk/res/android"
-  
+ 
 		 >
 
     <PreferenceCategory
@@ -31,7 +31,7 @@
       
 
     </PreferenceCategory>
-  <!-- <PreferenceScreen android:title="Whitelist"
+ <!--   <PreferenceScreen android:title="Whitelist"
      android:summary="Start Don't Pause when certain apps are opened"
            android:background="@android:color/darker_gray"
            android:key="pkgName">

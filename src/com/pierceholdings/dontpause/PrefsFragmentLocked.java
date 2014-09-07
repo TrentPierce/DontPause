@@ -5,6 +5,9 @@ import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 /**
  * Developed by Trent Pierce for Pierce Holdings LLC
@@ -38,6 +41,13 @@ public class PrefsFragmentLocked extends PreferenceFragment {
 		// Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.preferenceslocked);
         
+	}
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+	    View view = super.onCreateView(inflater, container, savedInstanceState);
+	    view.setBackgroundColor(getResources().getColor(android.R.color.white));
+
+	    return view;
 	}
 }
 

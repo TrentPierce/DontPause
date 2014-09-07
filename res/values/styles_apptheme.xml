@@ -10,5 +10,13 @@
   <style name="ImageButtonAppTheme" parent="android:Widget.Holo.ImageButton">
 	  <item name="android:background">@drawable/apptheme_btn_default_holo_dark</item>
   </style>
-
+<style name="MyTheme" parent="Theme.Sherlock.Light">
+    ....
+    <item name="windowContentOverlay">@null</item>
+    <item name="android:windowContentOverlay">@null</item>
+    ....
+</style>
+ <style name="PreferencesTheme">
+    <item name="android:windowBackground">@android:color/white</item>
+</style> 
 </resources>

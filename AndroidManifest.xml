@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pierceholdings.dontpause"
     android:launchMode="singleInstance"
-    android:versionCode="31"
-    android:versionName="3.46" >
+    android:versionCode="35"
+    android:versionName="3.50" >
 
     <!-- /**
  * Developed by Trent Pierce for Pierce Holdings LLC
@@ -25,8 +25,8 @@
      -->
     
     <uses-sdk
-        android:minSdkVersion="7"
-        android:targetSdkVersion="19" />
+        android:minSdkVersion="11"
+        android:targetSdkVersion="20" />
    
     <!-- Booter.java uses this to start on boot -->
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
@@ -50,7 +50,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:persistent="true"
-        android:theme="@style/Theme.Sherlock.Light" >
+        android:theme="@style/MyTheme" >
          <meta-data android:name="com.google.android.gms.version"
            android:value="@integer/google_play_services_version"
             />
@@ -70,7 +70,8 @@
         </activity>
         <activity
             android:name="com.pierceholdings.dontpause.SetPreferenceActivity"
-            android:parentActivityName="com.pierceholdings.dontpause.MainActivity">
+            android:parentActivityName="com.pierceholdings.dontpause.MainActivity"
+            >
             <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.pierceholdings.dontpause.MainActivity" /> 

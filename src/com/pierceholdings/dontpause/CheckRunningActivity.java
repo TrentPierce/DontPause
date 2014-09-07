@@ -1,6 +1,9 @@
 package com.pierceholdings.dontpause;
 
 
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -9,6 +12,7 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ResolveInfo;
 import android.os.Handler;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
@@ -24,6 +28,7 @@ public class CheckRunningActivity extends Service {
     private Context context;
   //  public String selectedPkg;
     private SharedPreferences prefs;
+    public String selectedPkg;
     
     public static final long NOTIFY_INTERVAL = 1000; // 1 second
    
@@ -43,9 +48,9 @@ public class CheckRunningActivity extends Service {
         }
     @Override
     public void onCreate() { 
-    	
     	 //Get preferences and check if persistent status bar notification is enabled
    // 	ActivityManager am = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
+    	
     	 // cancel if already existed
         if(mTimer != null) {
             mTimer.cancel();
@@ -69,14 +74,14 @@ public class CheckRunningActivity extends Service {
  
                 @Override
                 public void run() {
+                	
                 	SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
                      vibenabled = mySharedPreferences.getBoolean("vib_preference", false);
                 	ActivityManager am = (ActivityManager)getSystemService(Context.ACTIVITY_SERVICE);
                 	Log.d(TAG, "Its running");   
             
             String lastPkg = am.getRunningTasks(1).get(0).topActivity.getPackageName();
-            
-           if (isEnabled(lastPkg)) {
+           if (selectedPkg.equals(lastPkg)) {
             	if (vibenabled) {
             	startService(new Intent(CheckRunningActivity.this, MyService.class));
  	  		    	  } else {

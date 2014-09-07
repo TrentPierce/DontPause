@@ -33,8 +33,10 @@ import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by raidzero on 4/13/14 10:16 AM
@@ -97,12 +99,17 @@ public class SettingsActivity extends PreferenceActivity implements
     }
 
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
-        Preference pref = findPreference(key);
-        CheckBoxPreference cbtp = (CheckBoxPreference) pref;
-        final String pkgName = key;
-       pkgName.toString();
-       prefs.edit();
-       pref.shouldCommit();
+//    	// Get the current list.
+//    	SharedPreferences settings = this.getSharedPreferences("YourActivityPreferences", Context.MODE_PRIVATE);
+//    	SharedPreferences.Editor editor = settings.edit();
+//    	Set<String> selectedPkg = settings.getStringSet("selectedPkg", new HashSet<String>());
+//    	 
+//    	// Add the new value.
+//    	selectedPkg.add("Another string");
+//    	 
+//    	// Save the list.
+//    	editor.putStringSet("selectedPkg", selectedPkg);
+//    	editor.commit();
     }
 }
 //        // present dialog asking to kill the app
