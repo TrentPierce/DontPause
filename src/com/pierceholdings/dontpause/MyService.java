@@ -38,9 +38,9 @@ import android.preference.PreferenceManager;
 	public class MyService extends Service {
 		private AudioManager myAudioManager;
 		
-		
 	    boolean notifyenabled, vibenabled;
 	    boolean lastWasElse = false;
+	    boolean bootedVibe;
 	    
 	        //How often should I check if music is playing?
 	        public static final long NOTIFY_INTERVAL = 1000; // 1 second
@@ -75,6 +75,12 @@ import android.preference.PreferenceManager;
 	        @Override
 	        public void onCreate() {
 	         myAudioManager = (AudioManager)getSystemService(Context.AUDIO_SERVICE);
+	         
+	         if (myAudioManager.getRingerMode() == AudioManager.RINGER_MODE_VIBRATE)  {
+	        	 bootedVibe = true;
+	         } else {
+	        	 bootedVibe = false;
+	         }
 	         
 	         //Get preferences and check if persistent status bar notification is enabled
 	         SharedPreferences mySharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
@@ -132,7 +138,11 @@ import android.preference.PreferenceManager;
 	    	            		  if(myAudioManager.getRingerMode() == AudioManager.RINGER_MODE_SILENT) {
 		                    			
 		                    		} else {
+										if(bootedVibe) {
+		                    				
+		                    			} else {
 	    	            		  myAudioManager.setRingerMode(AudioManager.RINGER_MODE_NORMAL);
+		                    			}
 		                    		}
 	    	            		lastWasElse = true;  
 	    	            	  }

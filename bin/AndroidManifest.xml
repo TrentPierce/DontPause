@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.pierceholdings.dontpause"
     android:launchMode="singleInstance"
-    android:versionCode="35"
-    android:versionName="3.50" >
+    android:versionCode="37"
+    android:versionName="3.52" >
 
     <!-- /**
  * Developed by Trent Pierce for Pierce Holdings LLC
