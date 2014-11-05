@@ -12,7 +12,17 @@
         android:targetClass="com.pierceholdings.dontpause.DonateActivity"
         />
 </PreferenceScreen>  
-       
+
+        <PreferenceScreen android:title="Unlock Pro features with PayPal"
+           android:key="unlocked"
+           android:defaultValue="false"
+           android:background="@android:color/darker_gray">
+    <intent
+       android:action="android.intent.action.MAIN"
+        android:targetPackage="com.pierceholdings.dontpause"
+        android:targetClass="com.pierceholdings.dontpause.PaypalActivity"
+        />
+       </PreferenceScreen>  
 <PreferenceCategory android:title="Ringer Settings">
     <CheckBoxPreference
                 android:key="ringdef"

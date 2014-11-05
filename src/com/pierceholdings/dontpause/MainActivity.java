@@ -118,8 +118,18 @@ public class MainActivity extends SherlockActivity  implements OnClickListener, 
         
         //Set image in the middle of the activity. This will change depending on whether the service is running or not.
 	    ImageView DPIcon = (ImageView) findViewById(R.id.img);
-	    DPIcon.setBackgroundResource(R.drawable.dont_pause_icon);
 	    
+	    //set icon
+        boolean icon_selected = mySharedPreferences.getBoolean("icon_selected", false);
+        Log.d(TAG, "get boolean");
+        if (icon_selected == true) {
+        	Log.d(TAG, "set res true");
+        	DPIcon.setBackgroundResource(R.drawable.dont_pause_icon_selected);
+        } else {
+        	Log.d(TAG, "set res false");
+        	DPIcon.setBackgroundResource(R.drawable.dont_pause_icon);
+        }
+        
 	    //Define my Buttons
 	    buttonStart = (ImageButton) findViewById(R.id.buttonStart);
 	    buttonStop = (ImageButton) findViewById(R.id.buttonStop);
@@ -176,7 +186,11 @@ public class MainActivity extends SherlockActivity  implements OnClickListener, 
 	      
 	      //Set that main image to the green "selected" version. See what I did there?
 	      DPIcon.setImageResource(R.drawable.dont_pause_icon_selected);
-	      
+	      final SharedPreferences.Editor edit = mySharedPreferences.edit();
+          edit.putBoolean("icon_selected",true);
+          edit.commit();
+          Log.d(TAG, "saved true");
+          
 	      //What boolean did we get from the most recent check of shared preferences?
 	      //This determines whether we start standard mode or tablet mode
 	      if (vibenabled) {
@@ -211,7 +225,11 @@ public class MainActivity extends SherlockActivity  implements OnClickListener, 
 	      
 	      //Set the main image to the red version
 	      DPIcon.setImageResource(R.drawable.dont_pause_icon);
-	      
+	      final SharedPreferences.Editor edit1 = mySharedPreferences.edit();
+          edit1.putBoolean("icon_selected",false);
+          edit1.commit();
+          Log.d(TAG, "saved false");
+          
 	      //DO I need to stop tablet mode or standard mode?
 	      if (vibenabled) {
 	    	  //Stop Tablet mode
