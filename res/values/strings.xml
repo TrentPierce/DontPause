@@ -8,6 +8,7 @@
     <string name="ad_unit_id2">"ca-app-pub-5038706716632727/9892743389"</string>
     <string name="startToast">"Don't Pause has started"</string>
     <string name="stopToast">"Don't Pause has stopped"</string>
+     <string name="disclaimer">Automatically restoring purchases is not currently supported by PayPal. If you have any issues or need to restore a purchase, please email Support@DontPause.me with your order number and I will restore it manually.</string>
     <string name="shareText">"Check out this app that has enhanced my Android music experience"</string>
     <string name="wstartToast">"Click below to start"</string>
     <string name="title_activity_main">MainActivity</string>

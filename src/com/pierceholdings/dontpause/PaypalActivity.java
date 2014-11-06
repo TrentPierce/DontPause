@@ -8,6 +8,8 @@ import java.util.Set;
 import org.json.JSONException;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -18,12 +20,10 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockActivity;
 import com.actionbarsherlock.view.MenuItem;
-import com.paypal.android.sdk.payments.PayPalAuthorization;
 import com.paypal.android.sdk.payments.PayPalConfiguration;
 import com.paypal.android.sdk.payments.PayPalFuturePaymentActivity;
 import com.paypal.android.sdk.payments.PayPalOAuthScopes;
@@ -85,36 +85,34 @@ public class PaypalActivity extends SherlockActivity {
         intent.putExtra(PayPalService.EXTRA_PAYPAL_CONFIGURATION, config);
         startService(intent);
         
-        PayPalPayment thingToBuy = getThingToBuy(PayPalPayment.PAYMENT_INTENT_SALE);
-        Intent intent1 = new Intent(PaypalActivity.this, PaymentActivity.class);
+Log.e(TAG, "Alert Dialog");
+    	
+    	new AlertDialog.Builder(this)
+        .setTitle("Notice")
+        .setMessage(this.getString(R.string.disclaimer))
+        .setCancelable(false)
+        .setIcon(android.R.drawable.ic_dialog_alert)
+        .setPositiveButton("Ok, I understand", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+                
+                PayPalPayment thingToBuy = getThingToBuy(PayPalPayment.PAYMENT_INTENT_SALE);
+                Intent intent = new Intent(PaypalActivity.this, PaymentActivity.class);
 
-        intent1.putExtra(PaymentActivity.EXTRA_PAYMENT, thingToBuy);
+                intent.putExtra(PaymentActivity.EXTRA_PAYMENT, thingToBuy);
 
-        startActivityForResult(intent1, REQUEST_CODE_PAYMENT);
-        
+                startActivityForResult(intent, REQUEST_CODE_PAYMENT);
+                
+            }
+
+        })
+       .setNegativeButton("Nevermind", new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                PaypalActivity.this.finish();
+            }
+        })
+    	.show();
     }
-//	public void onBuyPressed(View pressed) {
-//       // Animation vanish = AnimationUtils.loadAnimation(this,R.drawable.vanish);;
-//		/* 
-//         * PAYMENT_INTENT_SALE will cause the payment to complete immediately.
-//         * Change PAYMENT_INTENT_SALE to 
-//         *   - PAYMENT_INTENT_AUTHORIZE to only authorize payment and capture funds later.
-//         *   - PAYMENT_INTENT_ORDER to create a payment for authorization and capture
-//         *     later via calls from your server.
-//         * 
-//         * Also, to include additional payment details and an item list, see getStuffToBuy() below.
-//         */
-//
-//        /*
-//         * See getStuffToBuy(..) for examples of some available payment options.
-//         */
-//		PayPalPayment thingToBuy = getThingToBuy(PayPalPayment.PAYMENT_INTENT_SALE);
-//        Intent intent = new Intent(PaypalActivity.this, PaymentActivity.class);
-//
-//        intent.putExtra(PaymentActivity.EXTRA_PAYMENT, thingToBuy);
-//
-//        startActivityForResult(intent, REQUEST_CODE_PAYMENT);
-//	}
     private PayPalPayment getThingToBuy(String paymentIntent) {
         return new PayPalPayment(new BigDecimal("01.43"), "USD", "Upgrade to Don't Pause Pro",
       //For testing

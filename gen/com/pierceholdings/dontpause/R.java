@@ -1337,11 +1337,11 @@ http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
         public static final int action_settings=0x7f0a0029;
         public static final int ad_unit_id=0x7f0a002b;
         public static final int ad_unit_id2=0x7f0a002c;
-        public static final int advertising=0x7f0a004a;
-        public static final int allow=0x7f0a0052;
-        public static final int app_license=0x7f0a005f;
+        public static final int advertising=0x7f0a004b;
+        public static final int allow=0x7f0a0053;
+        public static final int app_license=0x7f0a0060;
         public static final int app_name=0x7f0a0028;
-        public static final int application_error=0x7f0a0053;
+        public static final int application_error=0x7f0a0054;
         /**   Title for notification shown when GooglePlayServices needs to be
         enabled for a application to work. [CHAR LIMIT=70] 
          */
@@ -1365,19 +1365,19 @@ http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
         [CHAR LIMIT=70] 
          */
         public static final int auth_client_using_bad_version_title=0x7f0a0021;
-        public static final int backtonormal=0x7f0a003c;
-        public static final int bootstart=0x7f0a0044;
-        public static final int buy_button=0x7f0a0057;
+        public static final int backtonormal=0x7f0a003d;
+        public static final int bootstart=0x7f0a0045;
+        public static final int buy_button=0x7f0a0058;
         /**  License checking status messages 
  License checking status messages 
          */
-        public static final int check_license=0x7f0a004f;
-        public static final int checkadvertising=0x7f0a004b;
-        public static final int checkbootstart=0x7f0a0045;
-        public static final int checkdetheadphones=0x7f0a0048;
-        public static final int checking_license=0x7f0a0050;
-        public static final int checkstartbt=0x7f0a0042;
-        public static final int checktoenabletab=0x7f0a0038;
+        public static final int check_license=0x7f0a0050;
+        public static final int checkadvertising=0x7f0a004c;
+        public static final int checkbootstart=0x7f0a0046;
+        public static final int checkdetheadphones=0x7f0a0049;
+        public static final int checking_license=0x7f0a0051;
+        public static final int checkstartbt=0x7f0a0043;
+        public static final int checktoenabletab=0x7f0a0039;
         /**  Button in confirmation dialog to enable Google Play services.  Clicking it
         will direct user to application settings of Google Play services where they
         can enable it [CHAR LIMIT=40] 
@@ -1449,54 +1449,55 @@ http://developer.android.com/guide/topics/appwidgets/index.html#CreatingLayout
         /**  Long form sign-in button text [CHAR LIMIT=30] 
          */
         public static final int common_signin_button_text_long=0x7f0a0020;
-        public static final int customizations=0x7f0a0033;
-        public static final int defringer=0x7f0a003a;
-        public static final int detheadphones=0x7f0a0047;
-        public static final int disablenotif=0x7f0a0035;
-        public static final int dont_allow=0x7f0a0051;
-        public static final int enhancements=0x7f0a003d;
-        public static final int error_consume=0x7f0a005e;
-        public static final int error_verification=0x7f0a005c;
-        public static final int feedback=0x7f0a004d;
+        public static final int customizations=0x7f0a0034;
+        public static final int defringer=0x7f0a003b;
+        public static final int detheadphones=0x7f0a0048;
+        public static final int disablenotif=0x7f0a0036;
+        public static final int disclaimer=0x7f0a002f;
+        public static final int dont_allow=0x7f0a0052;
+        public static final int enhancements=0x7f0a003e;
+        public static final int error_consume=0x7f0a005f;
+        public static final int error_verification=0x7f0a005d;
+        public static final int feedback=0x7f0a004e;
         public static final int hello_world=0x7f0a002a;
-        public static final int in_app_bill_error=0x7f0a005a;
-        public static final int leavereview=0x7f0a004e;
+        public static final int in_app_bill_error=0x7f0a005b;
+        public static final int leavereview=0x7f0a004f;
         /**  Location client code resources (prefix with location_client) 
          */
         public static final int location_client_powered_by_google=0x7f0a0027;
-        public static final int notifdisabled=0x7f0a0036;
-        public static final int notification=0x7f0a0034;
-        public static final int onlynotif=0x7f0a0037;
-        public static final int onlysilencingnotif=0x7f0a0039;
-        public static final int purchase_error=0x7f0a005b;
-        public static final int quit_button=0x7f0a0059;
-        public static final int retry_button=0x7f0a0058;
-        public static final int setringernormal=0x7f0a003b;
-        public static final int settings_activityTitle=0x7f0a0060;
-        public static final int settings_enableTitle=0x7f0a0061;
-        public static final int settings_header=0x7f0a0062;
-        public static final int shareText=0x7f0a002f;
+        public static final int notifdisabled=0x7f0a0037;
+        public static final int notification=0x7f0a0035;
+        public static final int onlynotif=0x7f0a0038;
+        public static final int onlysilencingnotif=0x7f0a003a;
+        public static final int purchase_error=0x7f0a005c;
+        public static final int quit_button=0x7f0a005a;
+        public static final int retry_button=0x7f0a0059;
+        public static final int setringernormal=0x7f0a003c;
+        public static final int settings_activityTitle=0x7f0a0061;
+        public static final int settings_enableTitle=0x7f0a0062;
+        public static final int settings_header=0x7f0a0063;
+        public static final int shareText=0x7f0a0030;
         public static final int startToast=0x7f0a002d;
-        public static final int startbt=0x7f0a0041;
-        public static final int startusb=0x7f0a003e;
+        public static final int startbt=0x7f0a0042;
+        public static final int startusb=0x7f0a003f;
         public static final int stopToast=0x7f0a002e;
-        public static final int thank_you=0x7f0a005d;
-        public static final int ticker_text=0x7f0a0032;
-        public static final int title_activity_main=0x7f0a0031;
-        public static final int title_activity_paypal=0x7f0a0063;
-        public static final int unlicensed_dialog_body=0x7f0a0055;
-        public static final int unlicensed_dialog_retry_body=0x7f0a0056;
+        public static final int thank_you=0x7f0a005e;
+        public static final int ticker_text=0x7f0a0033;
+        public static final int title_activity_main=0x7f0a0032;
+        public static final int title_activity_paypal=0x7f0a0064;
+        public static final int unlicensed_dialog_body=0x7f0a0056;
+        public static final int unlicensed_dialog_retry_body=0x7f0a0057;
         /**  Unlicensed dialog messages 
  Unlicensed dialog messages 
          */
-        public static final int unlicensed_dialog_title=0x7f0a0054;
-        public static final int willadvertising=0x7f0a004c;
-        public static final int willbootstart=0x7f0a0046;
-        public static final int willdetheadphones=0x7f0a0049;
-        public static final int willstartbt=0x7f0a0043;
-        public static final int willstartusb=0x7f0a003f;
-        public static final int willstartusb2=0x7f0a0040;
-        public static final int wstartToast=0x7f0a0030;
+        public static final int unlicensed_dialog_title=0x7f0a0055;
+        public static final int willadvertising=0x7f0a004d;
+        public static final int willbootstart=0x7f0a0047;
+        public static final int willdetheadphones=0x7f0a004a;
+        public static final int willstartbt=0x7f0a0044;
+        public static final int willstartusb=0x7f0a0040;
+        public static final int willstartusb2=0x7f0a0041;
+        public static final int wstartToast=0x7f0a0031;
     }
     public static final class style {
         /** 
